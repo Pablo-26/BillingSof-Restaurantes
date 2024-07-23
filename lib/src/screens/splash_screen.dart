@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _animationController.forward();
 
     // Navegar a la pantalla de inicio después de 2 segundos
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacementNamed('/start');
     });
   }
@@ -49,8 +49,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromRGBO(217, 217, 217, 1),
-              Color.fromRGBO(40, 45, 51, 1),
+              Color.fromRGBO(66, 73, 81, 1),
+              Color.fromRGBO(29, 33, 37, 1),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,

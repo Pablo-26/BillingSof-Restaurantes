@@ -26,10 +26,6 @@ class NavBar extends StatelessWidget {
           label: 'Ordenes',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.restaurant_menu),
-          label: 'Restaurantes',
-        ),
-        BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'Perfil',
         ),

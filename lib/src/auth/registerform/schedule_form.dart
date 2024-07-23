@@ -38,7 +38,7 @@ class ScheduleForm extends StatefulWidget {
 }
 
 class _ScheduleFormState extends State<ScheduleForm> {
-  final _formKey = GlobalKey<FormState>();
+  //final _formKey = GlobalKey<FormState>();
 
   void _finishRegistration() {
     final user = User(
@@ -60,6 +60,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: Colors.white,
           title: const Text('Éxito'),
           content: const Text('Usuario creado con éxito'),
           actions: <Widget>[
@@ -67,8 +68,8 @@ class _ScheduleFormState extends State<ScheduleForm> {
               child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop(); // Cierra el diálogo
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/home', 
+                widget.navigatorKey.currentState?.pushNamedAndRemoveUntil(
+                  '/home',
                   (route) => false,
                 );
               },
@@ -159,9 +160,9 @@ class _ScheduleFormState extends State<ScheduleForm> {
                   horizontal: 20,
                   vertical: 10,
                 ),
-                child: Column(
+                child: const Column(
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         FaIcon(
                           FontAwesomeIcons.clock,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 class Mylogin extends StatefulWidget {
   final bool Function(String, String) onLogin;
@@ -27,7 +25,7 @@ class _LoginState extends State<Mylogin> {
     } else {
       // Mostrar un mensaje de error
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Credenciales inválidas')),
+        const SnackBar(content: Text('Credenciales inválidas')),
       );
     }
   }
@@ -114,7 +112,7 @@ class _LoginState extends State<Mylogin> {
               ],
             ),
             Container(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               margin: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

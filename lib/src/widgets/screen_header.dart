@@ -69,7 +69,7 @@ class _ScreenHeaderState extends State<ScreenHeader> {
                     ),
                   ),
                   const SizedBox(
-                    width: 110,
+                    width: 100,
                   ),
                   Expanded(
                     child: IconButton(

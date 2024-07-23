@@ -34,7 +34,7 @@ class Utilities extends StatelessWidget {
                   'Entregas',
                   style: TextStyle(
                       color: Color.fromRGBO(25, 29, 49, 1),
-                      fontSize: 12,
+                      fontSize: 11,
                       fontWeight: FontWeight.normal),
                 ),
               ],
@@ -55,7 +55,7 @@ class Utilities extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FaIcon(
-                  FontAwesomeIcons.addressBook,
+                  FontAwesomeIcons.map,
                   color: Color.fromRGBO(25, 29, 49, 1),
                   size: 20,
                 ),
@@ -66,7 +66,7 @@ class Utilities extends StatelessWidget {
                   'Cerca de ti',
                   style: TextStyle(
                       color: Color.fromRGBO(25, 29, 49, 1),
-                      fontSize: 12,
+                      fontSize: 11,
                       fontWeight: FontWeight.normal),
                 ),
               ],
@@ -98,7 +98,7 @@ class Utilities extends StatelessWidget {
                   'Rendimiento',
                   style: TextStyle(
                       color: Color.fromRGBO(25, 29, 49, 1),
-                      fontSize: 12,
+                      fontSize: 11,
                       fontWeight: FontWeight.normal),
                 ),
               ],

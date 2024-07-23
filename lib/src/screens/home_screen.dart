@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/src/models/order.dart';
 import 'package:frontend/src/models/user.dart';
 import 'package:frontend/src/screens/home_content.dart';
 import 'package:frontend/src/screens/orders_screen.dart';
 import 'package:frontend/src/screens/profile_screen.dart';
-import 'package:frontend/src/screens/restaurant_screen.dart';
 import 'package:frontend/src/widgets/navigation_bar.dart';
+import 'package:frontend/src/widgets/orders/order_list.dart';
 import 'package:frontend/src/widgets/screen_header.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,11 +25,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
+    // Gestion de la lista de ordnes nuevas
+    Widget mainOrder = const Center(
+      child: Text('No hay nuevas ordenes'),
+    );
+
+    if (_registeredOrders.isNotEmpty) {
+      mainOrder = OrderList(orders: _registeredOrders);
+    }
+
     super.initState();
     _screens = [
-      const HomeContent(),
-      const OrdersScreen(),
-      const RestaurantScreen(),
+      HomeContent(registeredOrders: _registeredOrders, mainOrder: mainOrder),
+      OrdersScreen(registeredOrders: _registeredOrders, mainOrder: mainOrder),
       ProfileScreen(user: widget.currentUser!),
     ];
   }
@@ -39,8 +48,29 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  final List<Order> _registeredOrders = [
+    Order(
+      nameOrder: 'Big Box',
+      restaurante: 'KFC',
+      status: 'Listo para despacho',
+      date: DateTime.now(),
+      location: 'Gran AKI',
+    ),
+    Order(
+      nameOrder: 'Pizza familiar',
+      restaurante: 'Giro Pizza',
+      status: 'En preparacion',
+      date: DateTime.now(),
+      location: 'Lourdes y Bernardo Valdivieso',
+    ),
+  ];
+
+  // Gestion de nuevas ordenes
+    
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

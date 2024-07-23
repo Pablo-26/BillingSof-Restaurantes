@@ -1,5 +1,4 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -249,7 +248,7 @@ class _VehicleFormState extends State<VehicleForm> {
                           child: DropdownButton<VehicleType>(
                             value: _selectedVehicle,
                             dropdownColor: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            borderRadius: const BorderRadius.all(Radius.circular(15)),
                             items:
                                 VehicleType.values.map((VehicleType category) {
                               return DropdownMenuItem<VehicleType>(
@@ -282,7 +281,7 @@ class _VehicleFormState extends State<VehicleForm> {
                     ),
                     TextFormField(
                       controller: _placa,
-                      inputFormatters: [],
+                      inputFormatters: const [],
                       decoration: InputDecoration(
                         labelText: 'Ej. LCL0213',
                         labelStyle: const TextStyle(
@@ -342,7 +341,7 @@ class _VehicleFormState extends State<VehicleForm> {
                       ),
                     ),
                     if (_selectedFile != null) ...[
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text('Nombre del archivo: ${_selectedFile!.name}'),
                       Text('Ruta del archivo: ${_selectedFile!.path}'),
                     ],
@@ -364,7 +363,7 @@ class _VehicleFormState extends State<VehicleForm> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 50),
+              margin: const EdgeInsets.symmetric(horizontal: 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -373,7 +372,7 @@ class _VehicleFormState extends State<VehicleForm> {
                       Navigator.pop(context);
                     },
                     style: OutlinedButton.styleFrom(
-                        iconColor: Color.fromRGBO(89, 89, 89, 1)),
+                        iconColor:const Color.fromRGBO(89, 89, 89, 1)),
                     child: const Row(
                       children: [
                         Icon(Icons.keyboard_arrow_left),

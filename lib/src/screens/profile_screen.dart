@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
         child: ListView(
           children: [
             // Puedes ajustar el tamaño y estilo de la imagen del perfil si tienes una
-            Center(
+            const Center(
               child: CircleAvatar(
                 radius: 60,
                 backgroundColor: const Color.fromRGBO(217, 217, 217, 1), // Fondo gris claro

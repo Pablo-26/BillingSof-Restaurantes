@@ -12,9 +12,13 @@ dependencies:
   file_picker: ^8.0.6
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_polyline_points: ^2.1.0
   font_awesome_flutter: ^10.7.0
+  google_maps_flutter: ^2.7.0
   hive_flutter: ^1.1.0
   intl: ^0.19.0
+  location: ^7.0.0
   uuid: ^4.4.2
 
 dev_dependencies:
@@ -30,3 +34,8 @@ flutter:
     - assets/images/orderImage.png
     - assets/images/motorcycle.png
     - assets/images/bike.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: 'assets/images/iconoLogo.png'

@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:frontend/src/models/order.dart';
 import 'package:frontend/src/services/utilities.dart';
 import 'package:frontend/src/widgets/active_deliveries/active_order_list.dart';
-import 'package:frontend/src/widgets/orders/order_list.dart';
 
 class HomeContent extends StatefulWidget {
-  const HomeContent({super.key});
+  final List<Order> registeredOrders;
+  final Widget mainOrder;
+
+  HomeContent({super.key, required this.registeredOrders, required this.mainOrder});
 
   @override
   State<StatefulWidget> createState() {
-    return _HomeScreenState();
+    return _HomeContentState();
   }
 }
 
-class _HomeScreenState extends State<HomeContent> {
+class _HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
     final List<Order> _activeOrders = [
@@ -40,23 +42,6 @@ class _HomeScreenState extends State<HomeContent> {
       ),
     ];
 
-    final List<Order> _registeredOrders = [
-      Order(
-        nameOrder: 'Big Box',
-        restaurante: 'KFC',
-        status: 'Listo para despacho',
-        date: DateTime.now(),
-        location: 'Gran AKI',
-      ),
-      Order(
-        nameOrder: 'Pizza familiar',
-        restaurante: 'Giro Pizza',
-        status: 'En preparacion',
-        date: DateTime.now(),
-        location: 'Lourdes y Bernardo Valdivieso',
-      ),
-    ];
-
     // Gestion de ordenes activas
     Widget mainNewOrder = const Center(
       child: Text('No tienes ordenes activas'),
@@ -64,16 +49,7 @@ class _HomeScreenState extends State<HomeContent> {
 
     if (_activeOrders.isNotEmpty) {
       mainNewOrder = ActiveOrderList(active_orders: _activeOrders);
-    }
-
-    // Gestion de nuevas ordenes
-    Widget mainOrder = const Center(
-      child: Text('No hay nuevas ordenes'),
-    );
-
-    if (_registeredOrders.isNotEmpty) {
-      mainOrder = OrderList(orders: _registeredOrders);
-    }
+    }   
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
@@ -98,7 +74,7 @@ class _HomeScreenState extends State<HomeContent> {
             style: TextStyle(fontSize: 16),
           ),
           Expanded(
-            child: mainOrder,
+            child: widget.mainOrder,
           ),
           const Text(
             'Entregas realizadas',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/src/auth/mylogin.dart';
 import 'package:frontend/src/auth/register.dart';
+import 'package:frontend/src/models/order.dart';
 import 'package:frontend/src/models/user.dart';
 import 'package:frontend/src/screens/home_screen.dart';
 import 'package:frontend/src/screens/splash_screen.dart';
@@ -36,8 +37,10 @@ class _AppState extends State<App> {
       _currentUser = user;
     });
     print('Usuario agregado: ${user.firstName} ${user.lastName1}');
-    _navigatorKey.currentState?.pushReplacementNamed('/home');
     _printRegisteredUsers();
+    if (_currentUser != null) {
+      _navigatorKey.currentState?.pushReplacementNamed('/home');
+    }
   }
 
   void _printRegisteredUsers() {
@@ -62,6 +65,24 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Order> _registeredOrders = [
+      Order(
+        nameOrder: 'Big Box',
+        restaurante: 'KFC',
+        status: 'Listo para despacho',
+        date: DateTime.now(),
+        location: 'Gran AKI',
+      ),
+      Order(
+        nameOrder: 'Pizza familiar',
+        restaurante: 'Giro Pizza',
+        status: 'En preparacion',
+        date: DateTime.now(),
+        location: 'Lourdes y Bernardo Valdivieso',
+      ),
+    ];
+
+
     return MaterialApp(
       navigatorKey: _navigatorKey,
       initialRoute: '/splash',
