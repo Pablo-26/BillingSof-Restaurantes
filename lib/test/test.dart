@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/map_page.dart';
+import 'package:frontend/test/map_page.dart';
 
 void main() {
   runApp(

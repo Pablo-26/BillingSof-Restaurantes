@@ -26,7 +26,18 @@ class _AppState extends State<App> {
       phone: '0999128475',
       vehicleType: 'carro',
       numberPlate: 'LCL0123',
-    )
+    ),
+    User(
+      firstName: 'Cristian',
+      lastName1: 'Rodriguez',
+      lastName2: 'Panamito',
+      email: 'cristian@gmail.com',
+      password: '1234',
+      dni: '1102938464',
+      phone: '0992734812',
+      vehicleType: 'moto',
+      numberPlate: 'JI3520',
+    ),
   ];
   User? _currentUser;
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
@@ -66,21 +77,25 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     final List<Order> _registeredOrders = [
-      Order(
-        nameOrder: 'Big Box',
-        restaurante: 'KFC',
-        status: 'Listo para despacho',
-        date: DateTime.now(),
-        location: 'Gran AKI',
-      ),
-      Order(
-        nameOrder: 'Pizza familiar',
-        restaurante: 'Giro Pizza',
-        status: 'En preparacion',
-        date: DateTime.now(),
-        location: 'Lourdes y Bernardo Valdivieso',
-      ),
-    ];
+    Order(
+      nameOrder: 'Big Box',
+      restaurante: 'KFC',
+      status: 'Listo para despacho',
+      date: DateTime.now(),
+      location: 'Gran AKI',
+      lat: -3.987714920670151, 
+      long: -79.20248620094415,
+    ),
+    Order(
+      nameOrder: 'Pizza familiar',
+      restaurante: 'Giro Pizza',
+      status: 'En preparacion',
+      date: DateTime.now(),
+      location: 'Lourdes y Bernardo Valdivieso',
+      lat: -4.002086394771131, 
+      long: -79.19722942729722
+    ),
+  ];
 
 
     return MaterialApp(

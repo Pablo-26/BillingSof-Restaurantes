@@ -36,8 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
     super.initState();
     _screens = [
-      HomeContent(registeredOrders: _registeredOrders, mainOrder: mainOrder),
-      OrdersScreen(registeredOrders: _registeredOrders, mainOrder: mainOrder),
+      HomeContent(),
+      OrdersScreen(
+        registeredOrders: _registeredOrders,
+        mainOrder: mainOrder,
+      ),
       ProfileScreen(user: widget.currentUser!),
     ];
   }
@@ -48,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  // Gestion de pedidos activos
   final List<Order> _registeredOrders = [
     Order(
       nameOrder: 'Big Box',
@@ -55,6 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
       status: 'Listo para despacho',
       date: DateTime.now(),
       location: 'Gran AKI',
+      lat: -3.987714920670151, 
+      long: -79.20248620094415,
     ),
     Order(
       nameOrder: 'Pizza familiar',
@@ -62,15 +68,16 @@ class _HomeScreenState extends State<HomeScreen> {
       status: 'En preparacion',
       date: DateTime.now(),
       location: 'Lourdes y Bernardo Valdivieso',
+      lat: -4.002086394771131, 
+      long: -79.19722942729722
     ),
   ];
 
   // Gestion de nuevas ordenes
-    
+
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

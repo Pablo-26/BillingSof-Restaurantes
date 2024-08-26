@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Utilities extends StatelessWidget {
-  const Utilities({super.key});
+  final Function(int) onItemTapped;
+
+  const Utilities({super.key, required this.onItemTapped});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Utilities extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => onItemTapped(0),
             style: OutlinedButton.styleFrom(
                 fixedSize: const Size(117, 80),
                 side: const BorderSide(
@@ -44,7 +46,7 @@ class Utilities extends StatelessWidget {
             width: 10,
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => onItemTapped(1),
             style: OutlinedButton.styleFrom(
                 fixedSize: const Size(117, 80),
                 side: const BorderSide(
@@ -76,7 +78,7 @@ class Utilities extends StatelessWidget {
             width: 10,
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => onItemTapped(2),
             style: OutlinedButton.styleFrom(
                 fixedSize: const Size(117, 80),
                 side: const BorderSide(

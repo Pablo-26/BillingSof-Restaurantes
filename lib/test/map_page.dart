@@ -20,7 +20,7 @@ class _MapPageState extends State<MapPage> {
   final Completer<GoogleMapController> _mapController = Completer<GoogleMapController>();
 
   static const LatLng _pGooglePlex = LatLng(-3.958798, -79.211017);
-  static const LatLng _pGulaBar = LatLng(-3.956759, -79.213737);
+  static const LatLng _pGulaBar = LatLng(37.420301, -122.078457);
   LatLng? _currentP = null;
 
   Map<PolylineId, Polyline> polylines = {};
@@ -117,6 +117,7 @@ class _MapPageState extends State<MapPage> {
           origin: PointLatLng(_pGooglePlex.latitude, _pGooglePlex.longitude),
           destination: PointLatLng(_pGulaBar.latitude, _pGulaBar.longitude),
           mode: TravelMode.walking),
+          googleApiKey: 'AIzaSyCuN0YPOlCMmBQqiNxkYg681PotRLdpWRQ'
     );
     if (result.points.isNotEmpty) {
       result.points.forEach((PointLatLng point) {

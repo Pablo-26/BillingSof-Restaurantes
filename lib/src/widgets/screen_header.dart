@@ -17,7 +17,7 @@ class _ScreenHeaderState extends State<ScreenHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190,
+      height: 220,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
